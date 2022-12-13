@@ -1,0 +1,59 @@
+<div class="settings-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Your Settings</h1>
+        <ul class="error-messages" *ngIf="isError">
+          <li>{{ errorMessage }}</li>
+        </ul>
+        <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="url"
+                class="form-control"
+                type="text"
+                placeholder="URL of profile picture"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="userName"
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Your Name"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <textarea
+                formControlName="bio"
+                class="form-control form-control-lg"
+                rows="8"
+                placeholder="Short bio about you (from 10 to 50 symbols)"
+              ></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="email"
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Email"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="password"
+                class="form-control form-control-lg"
+                type="password"
+                placeholder="Password (minimum 8 symbols)"
+              />
+            </fieldset>
+            <button type="submit" class="btn btn-lg btn-primary pull-xs-right">
+              Update Settings
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

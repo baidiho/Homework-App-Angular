@@ -1,0 +1,9 @@
+<div class="sidebar">
+  <p>Popular Tags</p>
+
+  <div class="tag-list">
+    <a *ngFor="let item of tagList" href="#" (click)="tagClicked(item)">
+      <app-tag [title]="item" [state]="tagStyle"></app-tag
+    ></a>
+  </div>
+</div>

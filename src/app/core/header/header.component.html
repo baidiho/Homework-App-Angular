@@ -1,0 +1,61 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="logo" routerLinkActive="active"
+      >conduit</a
+    >
+    <ul class="nav navbar-nav pull-xs-right">
+      <li class="nav-item" routerLink="home" routerLinkActive="active">
+        <!-- Add "active" class when you're on that page" -->
+        <a class="nav-link" href="#" appHighLight>Home</a>
+      </li>
+      <li
+        class="nav-item"
+        *ngIf="authService.isLogged"
+        routerLink="new-article"
+        routerLinkActive="active"
+      >
+        <a class="nav-link" href="#" appHighlight routerLinkActive="active">
+          <i class="ion-compose"></i>&nbsp;New Article
+        </a>
+      </li>
+      <li
+        class="nav-item"
+        *ngIf="authService.isLogged"
+        routerLink="settings"
+        routerLinkActive="active"
+      >
+        <a class="nav-link" href="#" appHighlight>
+          <i class="ion-gear-a"></i>&nbsp;Settings
+        </a>
+      </li>
+      <li
+        class="nav-item"
+        *ngIf="!authService.isLogged"
+        routerLink="login"
+        routerLinkActive="active"
+      >
+        <a class="nav-link" href="#" appHighlight>Sign in</a>
+      </li>
+      <li
+        class="nav-item"
+        *ngIf="!authService.isLogged"
+        routerLink="register"
+        routerLinkActive="active"
+      >
+        <a class="nav-link" href="#" appHighlight>Sign up</a>
+      </li>
+      <li
+        class="nav-item user"
+        *ngIf="authService.isLogged"
+        routerLink="profile"
+        routerLinkActive="active"
+      >
+        <a class="nav-link" href="#" appHighlight>
+          <img src="{{ authService.userData.image }}" alt="" />{{
+            authService.userData.username
+          }}</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
