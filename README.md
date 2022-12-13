@@ -20,7 +20,7 @@ During the course i have made front-end part of App:
 If you are interesting how it looks like: 
 - Clone this repo
 - Install node modules
-- Run dev server
+- Run "ng serve"
 
 
 
